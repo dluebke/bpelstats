@@ -72,7 +72,14 @@ public abstract class StatisticsPackage {
 					writer.write(metricValue.toString());
 				}
 			} catch(Exception e) {
-				writer.write("Error calculating metrics: " + e.getMessage().replaceAll("\r\n", " ").replaceAll("\n", " ").replaceAll("\r", " ").replaceAll("\t", " "));
+				
+				String message;
+				if(e.getMessage() != null)
+					message = e.getMessage().replaceAll("\r\n", " ").replaceAll("\n", " ").replaceAll("\r", " ").replaceAll("\t", " ");
+				else {
+					message = "(no message)";
+				}
+				writer.write("Error calculating metrics: " + message);
 				e.printStackTrace();
 			}
 			writer.write(System.lineSeparator());
