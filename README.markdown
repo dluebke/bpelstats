@@ -14,6 +14,12 @@ BPELStats provides a very simple Maven Build. You can clone the repository and s
 
    mvn install
 
+If Maven cannot find the xquery dependency you need to clone the source (e.g., from my fork at https://github.com/dluebke/xquery-parser ) and run 
+
+mvn install 
+
+within its directory. Afterwards, change the working directory to the BPELStats checkout directory and run mvn install again.
+
 After a successful build you will find a bpelstats-%VERSION%-jar-with-dependencies.jar (replace %VERSION% with the current version number) in the target directory.
 
 You can run 
